@@ -2,11 +2,63 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="GeminiApiApp.MainPage">
-
-    <StackLayout Padding="20">
-        <Editor x:Name="inputTextEditor" Placeholder="Digite seu texto aqui..." HeightRequest="100" />
-        <Button Text="Gerar Conteúdo" Clicked="OnGenerateContentClicked" />
-        <Label x:Name="responseLabel" Text="Resposta aparecerá aqui." />
-    </StackLayout>
-
+    <StackLayout Padding="10">        
+        <Label 
+            Text="Gemini API"
+            FontSize="Large" 
+            HorizontalOptions="Center"  
+            VerticalOptions="Start" 
+            Padding="10" />   
+        <ScrollView Orientation="Vertical" 
+                    VerticalOptions="StartAndExpand"                   
+                    Padding="10" 
+                    Grid.Column="0" 
+                    Grid.Row="0">
+            <Frame 
+                x:Name="responseFrame" 
+                IsVisible="True" 
+                BackgroundColor="LightGray" 
+                CornerRadius="10" 
+                Padding="10" 
+                Grid.Column="0" 
+                Grid.Row="0">
+                <Label 
+                    x:Name="responseLabel" 
+                    Text="" />             
+            </Frame>
+        </ScrollView>
+        <StackLayout>
+            <Grid 
+                ColumnDefinitions="240,*" 
+                RowDefinitions="*,*"
+                VerticalOptions="FillAndExpand">            
+                <StackLayout 
+                    VerticalOptions="End"
+                    Grid.Column="0"
+                    Grid.Row="1">
+                    <Editor 
+                        x:Name="inputTextEditor" 
+                        Placeholder="Digite seu texto aqui..."
+                        FontSize="18"                     />            
+                </StackLayout>
+                <StackLayout Padding="10" 
+                    VerticalOptions="End" 
+                    Grid.Column="1" 
+                    Grid.Row="1"                 
+                    HorizontalOptions="End">
+                    <Button 
+                        Text="Enviar" 
+                        Clicked="OnGenerateContentClicked" 
+                        WidthRequest="80"
+                        BackgroundColor="AliceBlue"
+                        TextColor="Black"
+                        CornerRadius="20"
+                        FontAttributes="Bold"
+                        Padding="10"
+                        BorderColor="DarkBlue"
+                        BorderWidth="2"/>           
+                </StackLayout>
+            </Grid>   
+        </StackLayout>                      
+     </StackLayout>                                                 
 </ContentPage>
