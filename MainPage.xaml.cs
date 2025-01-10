@@ -10,7 +10,7 @@ namespace GeminiApiApp
     public partial class MainPage : ContentPage
     {
         // Substitua pelo seu API Key
-        private const string ApiKey = "AIzaSyDDILhLWVx-vivzCHlyoXqCdcHipDcvIWI";
+        private const string ApiKey = "SUA API KEY";
         private const string ApiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=";
 
         private readonly HttpClient _httpClient;
